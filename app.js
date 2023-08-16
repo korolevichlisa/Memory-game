@@ -1,12 +1,20 @@
+cardArray.sort(() => 0.5 - Math.random());
+
+var newCardArray = []
+for(let i = 0; i < 6; i ++ ){
+  newCardArray.push(cardArray[i])
+}
+console.log(newCardArray)
 {
-  const temp = cardArray.map((item) => item);
+  const temp = newCardArray.map((item) => item);
 
   for (const item of temp) {
-    cardArray.push(item);
+    newCardArray.push(item);
   }
 }
 
-cardArray.sort(() => 0.5 - Math.random());
+
+
 
 const displayGrid = document.querySelector("#grid");
 const resulDisplay = document.querySelector("#result");
@@ -15,7 +23,7 @@ let cardsChoisenIds = [];
 let cardsWon = [];
 
 function createBoard() {
-  for (let i = 0; i < cardArray.length; i++) {
+  for (let i = 0; i < newCardArray.length; i++) {
     const card = document.createElement("img");
     card.setAttribute("src", "./images/blank.svg");
     card.setAttribute("data-id", i);
@@ -52,7 +60,7 @@ function checkMatch() {
   cardsChoisenIds = [];
   resulDisplay.textContent = cardsWon.length;
 
-  if (cardsWon.length == cardArray.length / 2) {
+  if (cardsWon.length == newCardArray.length / 2) {
     resulDisplay.textContent = "congratulations you found them all";
   }
 }
@@ -60,10 +68,10 @@ function checkMatch() {
 function flipCard() {
   const cardId = this.getAttribute("data-id");
 
-  cardsChoisen.push(cardArray[cardId].name);
+  cardsChoisen.push(newCardArray[cardId].name);
   cardsChoisenIds.push(cardId);
 
-  this.setAttribute("src", cardArray[cardId].img);
+  this.setAttribute("src", newCardArray[cardId].img);
   if (cardsChoisen.length === 2) {
     setTimeout(checkMatch, 500);
   }

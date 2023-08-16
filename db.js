@@ -13,7 +13,7 @@ const cardArray = [
   },
   {
     name: "icecream",
-    img: "images/icecream.jpeg",
+    img: "images/icecream.svg",
   },
   {
     name: "milkshake",
@@ -21,6 +21,10 @@ const cardArray = [
   },
   {
     name: "pizzas",
-    img: "images/pizzas.jpg",
+    img: "images/pizza.svg",
+  },
+  {
+    name: "sad",
+    img: "images/sad.svg",
   },
 ];
